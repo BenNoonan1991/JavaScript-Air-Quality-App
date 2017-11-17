@@ -7,6 +7,11 @@ describe('Purifier', function() {
   });
 
   it('starts at 20 degrees', function() {
-    expect(purifier.temperature).toEqual(3);
+    expect(purifier.power).toEqual(3);
+  });
+
+  it('increases the temperature with up', function() {
+    purifier.up();
+    expect(purifier.getCurrentPower()).toEqual(4);
   });
 });
