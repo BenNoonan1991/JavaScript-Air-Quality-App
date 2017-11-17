@@ -1,3 +1,3 @@
 function Purifier() {
-  this.temperature = 20;
+  this.temperature = 3;
 }
