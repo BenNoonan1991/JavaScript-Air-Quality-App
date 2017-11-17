@@ -9,3 +9,7 @@ Purifier.prototype.getCurrentPower = function () {
 Purifier.prototype.up = function () {
   this.power += 1;
 };
+
+Purifier.prototype.down = function () {
+  this.power -= 1;
+};
