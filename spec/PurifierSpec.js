@@ -19,4 +19,11 @@ describe('Purifier', function() {
     purifier.down();
     expect(purifier.getCurrentPower()).toEqual(2);
   });
+
+  it('has a minimum power of 1', function() {
+    for (var i = 0; i < 2; i++) {
+      purifier.down();
+    }
+    expect(purifier.getCurrentPower()).toEqual(1);
+  });
 });
