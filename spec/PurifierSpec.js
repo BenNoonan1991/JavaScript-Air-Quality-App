@@ -41,5 +41,16 @@ describe('Purifier', function() {
   expect(purifier.isPowerSavingModeOn()).toBe(false);
   purifier.switchPowerSavingModeOn();
   expect(purifier.isPowerSavingModeOn()).toBe(true);
+  });
+
+  describe('when power saving mode is on', function() {
+  it('has a maximum power of 5', function() {
+    for (var i = 0; i < 8; i++) {
+      purifier.up();
+    }
+    expect(purifier.getCurrentPower()).toEqual(5);
+  });
 });
+
+
 });
