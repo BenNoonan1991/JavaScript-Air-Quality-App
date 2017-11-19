@@ -1,6 +1,7 @@
 function Purifier() {
   this.MINIMUM_POWER = 1;
   this.power = 3;
+  this.powerSavingMode = true;
 }
 
 Purifier.prototype.getCurrentPower = function () {
@@ -20,4 +21,8 @@ Purifier.prototype.down = function () {
 
 Purifier.prototype.isMinimumPower = function () {
   return this.power === this.MINIMUM_POWER;
+};
+
+Purifier.prototype.isPowerSavingModeOn = function () {
+  return this.powerSavingMode === true;
 };

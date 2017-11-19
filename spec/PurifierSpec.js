@@ -26,4 +26,8 @@ describe('Purifier', function() {
     }
     expect(purifier.getCurrentPower()).toEqual(1);
   });
+
+  it('has a power saving mode that is on by default', function() {
+    expect(purifier.isPowerSavingModeOn()).toBe(true);
+  });
 });
