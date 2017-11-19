@@ -26,3 +26,7 @@ Purifier.prototype.isMinimumPower = function () {
 Purifier.prototype.isPowerSavingModeOn = function () {
   return this.powerSavingMode === true;
 };
+
+Purifier.prototype.switchPowerSavingModeOff = function() {
+  this.powerSavingMode = false;
+};

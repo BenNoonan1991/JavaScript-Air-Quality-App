@@ -30,4 +30,9 @@ describe('Purifier', function() {
   it('has a power saving mode that is on by default', function() {
     expect(purifier.isPowerSavingModeOn()).toBe(true);
   });
+
+  it('can switch PSM off', function(){
+    purifier.switchPowerSavingModeOff();
+    expect(purifier.isPowerSavingModeOn()).toBe(false);
+  });
 });
