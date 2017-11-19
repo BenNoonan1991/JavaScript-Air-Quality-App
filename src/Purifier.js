@@ -30,3 +30,7 @@ Purifier.prototype.isPowerSavingModeOn = function () {
 Purifier.prototype.switchPowerSavingModeOff = function() {
   this.powerSavingMode = false;
 };
+
+Purifier.prototype.switchPowerSavingModeOn = function () {
+  this.powerSavingMode = true;
+};

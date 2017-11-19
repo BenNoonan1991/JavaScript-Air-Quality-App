@@ -35,4 +35,11 @@ describe('Purifier', function() {
     purifier.switchPowerSavingModeOff();
     expect(purifier.isPowerSavingModeOn()).toBe(false);
   });
+
+  it('can switch PSM back on', function() {
+  purifier.switchPowerSavingModeOff();
+  expect(purifier.isPowerSavingModeOn()).toBe(false);
+  purifier.switchPowerSavingModeOn();
+  expect(purifier.isPowerSavingModeOn()).toBe(true);
+});
 });
