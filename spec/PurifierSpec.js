@@ -70,6 +70,31 @@ describe('Purifier', function() {
     expect(purifier.getCurrentPower()).toEqual(3);
   });
 
+  describe('displaying usage levels', function() {
+    describe('when the power is below 3 degrees', function() {
+      it('it is considered low-usage', function() {
+        for (var i = 0; i < 8; i++) {
+          purifier.down();
+        }
+        expect(purifier.energyUsage()).toEqual('low-usage');
+      });
+    });
 
+    describe('when the temperature is 4 or 5', function() {
+      it('it is considered medium-usage', function() {
+        purifier.up();
+        expect(purifier.energyUsage()).toEqual('medium-usage');
+      });
+    });
 
+      describe('when the power above 5', function() {
+          it('it is considered high-usage', function() {
+            purifier.powerSavingMode = false;
+            for (var i = 0; i < 8; i++) {
+              purifier.up();
+            }
+            expect(purifier.energyUsage()).toEqual('high-usage');
+          });
+        });
+      });
 });

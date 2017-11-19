@@ -5,6 +5,7 @@ function Purifier() {
   this.powerSavingMode = true;
   this.MAX_LIMIT_PSM_ON = 5;
   this.MAX_LIMIT_PSM_OFF = 7;
+  this.MEDIUM_ENERGY_USAGE_LIMIT = 4;
 }
 
 Purifier.prototype.getCurrentPower = function () {
@@ -50,4 +51,14 @@ Purifier.prototype.isMaximumPower = function() {
 
 Purifier.prototype.resetPower = function() {
   this.power = this.DEFAULT_POWER;
+};
+
+Purifier.prototype.energyUsage = function() {
+  if (this.power < this.MEDIUM_ENERGY_USAGE_LIMIT) {
+    return 'low-usage';
+  }
+  if (this.power >= this.MEDIUM_ENERGY_USAGE_LIMIT && this.power <= this.MAX_LIMIT_PSM_ON) {
+    return 'medium-usage';
+  }
+  return 'high-usage';
 };
