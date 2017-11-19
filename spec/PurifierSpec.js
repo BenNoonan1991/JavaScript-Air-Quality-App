@@ -44,13 +44,32 @@ describe('Purifier', function() {
   });
 
   describe('when power saving mode is on', function() {
-  it('has a maximum power of 5', function() {
+    it('has a maximum power of 5', function() {
+      for (var i = 0; i < 8; i++) {
+        purifier.up();
+      }
+      expect(purifier.getCurrentPower()).toEqual(5);
+    });
+  });
+
+  describe('when power saving mode is off', function() {
+    it('has a maximum power of 7', function() {
+      purifier.switchPowerSavingModeOff();
+      for (var i = 0; i < 13; i++) {
+        purifier.up();
+      }
+      expect(purifier.getCurrentPower()).toEqual(7);
+    });
+  });
+
+  it('can be reset to the default power', function() {
     for (var i = 0; i < 8; i++) {
       purifier.up();
     }
-    expect(purifier.getCurrentPower()).toEqual(5);
+    purifier.resetPower();
+    expect(purifier.getCurrentPower()).toEqual(3);
   });
-});
+
 
 
 });

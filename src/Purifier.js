@@ -1,6 +1,7 @@
 function Purifier() {
   this.MINIMUM_POWER = 1;
-  this.power = 3;
+  this.DEFAULT_POWER = 3;
+  this.power = this.DEFAULT_POWER;
   this.powerSavingMode = true;
   this.MAX_LIMIT_PSM_ON = 5;
   this.MAX_LIMIT_PSM_OFF = 7;
@@ -45,4 +46,8 @@ Purifier.prototype.isMaximumPower = function() {
     return this.power === this.MAX_LIMIT_PSM_OFF;
   }
   return this.power === this.MAX_LIMIT_PSM_ON;
+};
+
+Purifier.prototype.resetPower = function() {
+  this.power = this.DEFAULT_POWER;
 };
